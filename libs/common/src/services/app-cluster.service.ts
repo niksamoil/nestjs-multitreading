@@ -9,7 +9,7 @@ export class AppClusterService {
   static clusterize(callback: () => void): void {
     if (cluster.isPrimary) {
       console.log(`Master server started on ${process.pid}`);
-      for (let i = 0; i < numCPUs; i++) {
+      for (let i = 0; i < numCPUs / 2; i++) {
         cluster.fork();
       }
       cluster.on('exit', (worker) => {

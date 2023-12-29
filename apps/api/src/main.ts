@@ -12,10 +12,12 @@
 import cluster from 'node:cluster';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { AppClusterService } from './app-cluster.service';
+import { AppClusterService } from '@app/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  await app.startAllMicroservices();
   await app.listen(3000 + (cluster.worker.id - 1));
 }
 
