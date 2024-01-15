@@ -7,11 +7,12 @@ import { AppService } from './app.service';
   imports: [
     ClientsModule.registerAsync([
       {
-        name: 'api-service',
+        name: 'NATS_CLIENT',
         useFactory: () => ({
           transport: Transport.NATS,
           options: {
-            servers: ['nats://localhost:4222'],
+            // servers: ['nats://localhost:4222'],
+            servers: ['nats://nats:4222'],
             queue: 'api-service',
           },
         }),

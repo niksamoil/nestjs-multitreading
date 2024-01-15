@@ -11,22 +11,12 @@ export class AppController {
   }
 
   @Get('heavy')
-  getHeavyComputation(): string {
-    let sum = 0;
-    for (let i = 0; i < 10e9; i++) {
-      sum += i;
-    }
-    console.log(`Sum: ${sum}`);
-    return `Sum: ${sum}`;
+  getHeavyComputation() {
+    return this.appService.getHeavyComputation();
   }
 
   @Get('other')
-  getOtherComputation(): string {
-    let sum = 0;
-    for (let i = 0; i < 10e7; i++) {
-      sum += i;
-    }
-    console.log(`Sum other: ${sum}`);
-    return `Sum other: ${sum}`;
+  getOtherComputation() {
+    return this.appService.getOtherComputation();
   }
 }

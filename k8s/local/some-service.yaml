@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: some-service-deployment
+  labels:
+    app: some-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: some-service
+  template:
+    metadata:
+      labels:
+        app: some-service
+    spec:
+      containers:
+        - name: some-service
+          image: some-service:latest

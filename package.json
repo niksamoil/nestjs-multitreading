@@ -13,9 +13,9 @@
     "start:api-debug": "nest start api --debug --watch",
     "start:api-prod": "node dist/apps/api/main",
     "build:some-service": "nest build some-service",
-    "start:some-service:dev": "nest start some-service --watch",
-    "start:some-service:debug": "nest start some-service --debug --watch",
-    "start:some-service:prod": "node dist/apps/some-service/main"
+    "start:some-service-dev": "nest start some-service --watch",
+    "start:some-service-debug": "nest start some-service --debug --watch",
+    "start:some-service-prod": "node dist/apps/some-service/main"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
